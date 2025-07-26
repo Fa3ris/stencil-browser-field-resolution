@@ -1,7 +1,6 @@
 import { Component, Prop, h } from '@stencil/core';
 import { format } from '../../utils/utils';
-import qs from 'qs';
-
+import inspect from 'object-inspect';
 @Component({
   tag: 'my-component',
   styleUrl: 'my-component.css',
@@ -24,7 +23,7 @@ export class MyComponent {
   @Prop() last: string;
 
   private getText(): string {
-    qs.parse('a=c');
+    inspect(23);
     return format(this.first, this.middle, this.last);
   }
 
