@@ -1,5 +1,6 @@
 import { Component, Prop, h } from '@stencil/core';
 import { format } from '../../utils/utils';
+import qs from 'qs';
 
 @Component({
   tag: 'my-component',
@@ -23,6 +24,7 @@ export class MyComponent {
   @Prop() last: string;
 
   private getText(): string {
+    qs.parse('a=c');
     return format(this.first, this.middle, this.last);
   }
 
